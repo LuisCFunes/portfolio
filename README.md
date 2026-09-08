@@ -1,6 +1,6 @@
 # 💼 Portafolio Personal - Luis Funes
 
-Bienvenido al repositorio de mi portafolio web personal. Este proyecto fue diseñado y desarrollado para presentar mi perfil profesional como desarrollador web y estudiante de Ingeniería en Desarrollo de Aplicaciones / Software, mostrando mis proyectos más destacados, habilidades técnicas, certificaciones y formas de contacto.
+Bienvenido al repositorio de mi portafolio web personal. Este proyecto fue diseñado y desarrollado para presentar mi perfil profesional como desarrollador web y estudiante de Ingeniería en Desarrollo de Aplicaciones, mostrando mis proyectos más destacados, habilidades técnicas, certificaciones y formas de contacto.
 
 ---
 
@@ -40,7 +40,7 @@ Puedes explorar el portafolio en vivo a través de GitHub Pages:
    - **Wroutine**: Aplicación web desplegada en Vercel para seguimiento de rutinas de ejercicio e intervalos de descanso.
    - **Control Stock**: Sistema de gestión de inventario y stock con React, operaciones CRUD completas y base de datos (Supabase / PocketBase).
 5. **Certificaciones y Formación**:
-   - **Ingeniería en Software** - Universidad de San Pedro Sula (USAP) (2021 - Presente).
+   - **Ingeniería en Desarrollo de Aplicaciones** - Universidad de San Pedro Sula (USAP) (2021 - Presente).
    - **Formaciones y Cursos de Especialización** - Oracle Next Education (ONE) / Alura Latam y Udemy.
 
 ---

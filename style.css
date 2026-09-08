@@ -113,17 +113,18 @@ section.menu {
         }
 
         .lang-opt {
-          color: var(--text-muted);
-          transition: color 0.2s ease;
+          color: rgba(255, 255, 255, 0.45);
+          transition: all 0.2s ease;
 
           &.active {
-            color: var(--color-text-color);
-            text-shadow: 0 0 8px rgba(211, 15, 150, 0.6);
+            color: #ffffff;
+            font-weight: 800;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
           }
         }
 
         .lang-sep {
-          color: rgba(255, 255, 255, 0.3);
+          color: rgba(255, 255, 255, 0.25);
           font-weight: 400;
         }
       }
