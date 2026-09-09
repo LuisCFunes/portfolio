@@ -57,7 +57,7 @@
         </section>
 
         <!-- Sección sobre mi -->
-        <section class="about" id="sobre-mi">
+        <section class="about reveal" id="sobre-mi">
             <div class="about__container">
                 <h3 class="about__title" data-i18n="about-title">About Me</h3>
                 <p class="about__paragraph" data-i18n="about-p1">I am an Application Development Engineering student at USAP focused on software development. I am passionate about building well-structured, functional, and scalable applications using technologies like JavaScript, TypeScript, React, Node.js, Python, and relational databases.</p>
@@ -66,7 +66,7 @@
         </section>
 
         <!-- Sección de Skills -->
-        <section class="skills" id="skills">
+        <section class="skills reveal" id="skills">
             <h3 class="skills__title" data-i18n="skills-title">Skills</h3>
             <div class="skills__line">
                 <div class="skills__box">
@@ -142,7 +142,7 @@
             <h2 class="experience__section__title" data-i18n="projects-title">Projects</h2>
             <div class="experience__container">
                 <!-- 1. Menú Digital -->
-                <div class="experience__box">
+                <div class="experience__box reveal">
                     <img class="experience__img" src="assets/menu_digital.png" alt="Menú Digital Fullstack">
                     <div class="experience__info">
                         <h2 class="experience__title">Menú Digital Fullstack</h2>
@@ -158,7 +158,7 @@
                 </div>
 
                 <!-- 2. SteamNoThanks -->
-                <div class="experience__box">
+                <div class="experience__box reveal">
                     <img class="experience__img" src="assets/steam_no_thanks.png" alt="SteamNoThanks Game Price Comparator">
                     <div class="experience__info">
                         <h2 class="experience__title">SteamNoThanks</h2>
@@ -174,7 +174,7 @@
                 </div>
 
                 <!-- 3. TOTP Authenticator -->
-                <div class="experience__box">
+                <div class="experience__box reveal">
                     <img class="experience__img" src="assets/totp_authenticator.png" alt="TOTP 2FA Authenticator Windows">
                     <div class="experience__info">
                         <h2 class="experience__title">TOTP 2FA Authenticator</h2>
@@ -188,7 +188,7 @@
                 </div>
 
                 <!-- 4. Wroutine -->
-                <div class="experience__box">
+                <div class="experience__box reveal">
                     <img class="experience__img" src="assets/wroutine.png" alt="Wroutine Workout App">
                     <div class="experience__info">
                         <h2 class="experience__title">Wroutine</h2>
@@ -204,7 +204,7 @@
                 </div>
 
                 <!-- 5. Control Stock -->
-                <div class="experience__box">
+                <div class="experience__box reveal">
                     <img class="experience__img" src="assets/control_stock.png" alt="Control Stock WebApp">
                     <div class="experience__info">
                         <h2 class="experience__title">Control Stock WebApp</h2>
@@ -220,10 +220,10 @@
         </section>
 
         <!-- Sección de Formación académica -->
-        <section class="academic" id="formacion">
+        <section class="academic reveal" id="formacion">
             <h2 class="academic__title" data-i18n="cert-title">Certifications</h2>
             <div class="academic__courses">
-                <div class="academic__courses__box">
+                <div class="academic__courses__box reveal stagger-1">
                     <ul class="academic__courses__list">
                         <li class="academic__courses__item__img">
                             <img class="academic__courses__logo" src="assets/logo-usap.webp" alt="USAP Logo">
@@ -236,7 +236,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="academic__courses__box">
+                <div class="academic__courses__box reveal stagger-2">
                     <ul class="academic__courses__list">
                         <li class="academic__courses__item__img">
                             <img class="academic__courses__logo" src="assets/alura_logo.png" alt="Alura Logo">
@@ -249,7 +249,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="academic__courses__box">
+                <div class="academic__courses__box reveal stagger-3">
                     <ul class="academic__courses__list">
                         <li class="academic__courses__item__img">
                             <img class="academic__courses__logo" src="assets/alura_logo.png" alt="Alura Logo">
@@ -262,7 +262,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="academic__courses__box">
+                <div class="academic__courses__box reveal stagger-4">
                     <ul class="academic__courses__list">
                         <li class="academic__courses__item__img">
                             <img class="academic__courses__logo" src="assets/udemy_logo.png" alt="Udemy Logo">
@@ -289,6 +289,41 @@
 
     <!-- Script de Internacionalización (i18n ES/EN) -->
     <script src="i18n.js" defer></script>
+    <!-- Script de Animaciones y Scroll Reveal (Incrustado para compatibilidad 100% con protocolo file://) -->
+    <script>
+        (function() {
+            function initScrollReveal() {
+                var reveals = document.querySelectorAll('.reveal');
+                if (!reveals || !reveals.length) return;
+
+                if (!('IntersectionObserver' in window)) {
+                    reveals.forEach(function(el) { el.classList.add('active'); });
+                    return;
+                }
+
+                var observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('active');
+                        } else {
+                            entry.target.classList.remove('active');
+                        }
+                    });
+                }, {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -40px 0px'
+                });
+
+                reveals.forEach(function(el) { observer.observe(el); });
+            }
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initScrollReveal);
+            } else {
+                initScrollReveal();
+            }
+        })();
+    </script>
 </body>
 
 </html>
